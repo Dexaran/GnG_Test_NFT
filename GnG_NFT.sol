@@ -354,6 +354,11 @@ abstract contract CallistoNFT is ICallistoNFT, Ownable {
         emit Transfer(msg.sender, _to, _tokenId);
         return true;
     }
+
+    function mint(uint256 tokenId) public onlyOwner
+    {
+        _safeMint(msg.sender, tokenId);
+    }
     
     function _exists(uint256 tokenId) internal view returns (bool) {
         return _owners[tokenId] != address(0);
@@ -469,5 +474,5 @@ abstract contract CallistoNFT is ICallistoNFT, Ownable {
 
 contract GnGNFT is CallistoNFT("GnG Test NFT", "GnGT", 0)
 {
-    
+
 }
