@@ -466,3 +466,8 @@ abstract contract CallistoNFT is ICallistoNFT, Ownable {
         uint256 tokenId
     ) internal virtual {}
 }
+
+contract GnGNFT is CallistoNFT("GnG Test NFT", "GnGT", 0)
+{
+    
+}
